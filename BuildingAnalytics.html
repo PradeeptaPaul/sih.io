@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlighten</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+</head>
+
+<body onload="predict_app()">
+
+    <script>
+        function predict_app() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+
+                document.getElementById("predict_applances").innerHTML = this.responseText;
+                setInterval(predict_app(), 2000);
+
+            }
+            xhttp.open("GET", "http://127.0.0.1:8100/getapp");
+            xhttp.send();
+
+        }
+    </script>
+
+    <nav class="containerNav">
+        <header class="text-gray-600 body-font">
+            <div class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
+                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                    <a href="/index.html">
+                        <img src="./Images/SuryabalaLogo.jpg" alt="" class="headerLogo" width="45rem">
+                    </a>
+                    <a class="ml-3 text-xl font-bold">Net Zero Hybrid AC-DC microgrid</a>
+                </a>
+                <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                    <a class="mr-5 hover:text-gray-600 text-gray-900  cursor-pointer font-semibold"
+                        href="/index.html">Home</a>
+                    <a class="mr-5 hover:text-gray-600 text-gray-900  cursor-pointer font-semibold">New Building</a>
+                    <a class="mr-5 hover:text-green-300 text-green-400  cursor-pointer font-bold"
+                        href="/BuildingAnalytics.html">Building Analytics</a>
+                    <a class="mr-5 hover:text-gray-600 text-gray-900  cursor-pointer font-semibold">Energy
+                        Calculator</a>
+                        <a class="mr-5 hover:text-gray-600 text-gray-900  cursor-pointer font-semibold" href="/Insights.html">Insights</a>
+                    </nav>
+            </div>
+        </header>
+    </nav>
+
+    <div class="swicthConter">
+        <div class="card">
+            <div class="cardHeader">
+                <h1>Load 1</h1>
+            </div>
+            <div class="cardBody">
+                <label for="toggle-button" class="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                    <span class="buttonToggle">OFF</span>
+                    <span class="relative">
+                        <input id="toggle-button" type="checkbox" class="hidden peer">
+                        <div
+                            class="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-purple-500">
+                        </div>
+                        <div
+                            class="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-100">
+                        </div>
+                    </span>
+                    <span class="buttonToggle">ON</span>
+                </label>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="cardHeader">
+                <h1>Load 2</h1>
+            </div>
+            <div class="cardBody">
+                <label for="toggle-button1"
+                    class="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                    <span class="buttonToggle">OFF</span>
+                    <span class="relative">
+                        <input id="toggle-button1" type="checkbox" class="hidden peer">
+                        <div
+                            class="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-purple-500">
+                        </div>
+                        <div
+                            class="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-100">
+                        </div>
+                    </span>
+                    <span class="buttonToggle">ON</span>
+                </label>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="cardHeader">
+                <h1>Load 3</h1>
+            </div>
+            <div class="cardBody">
+                <label for="toggle-button2"
+                    class="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                    <span class="buttonToggle">OFF</span>
+                    <span class="relative">
+                        <input id="toggle-button2" type="checkbox" class="hidden peer">
+                        <div
+                            class="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-purple-500">
+                        </div>
+                        <div
+                            class="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-100">
+                        </div>
+                    </span>
+                    <span class="buttonToggle">ON</span>
+                </label>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="cardHeader">
+                <h1>Load 4</h1>
+            </div>
+            <div class="cardBody">
+                <label for="toggle-button3"
+                    class="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                    <span class="buttonToggle">OFF</span>
+                    <span class="relative">
+                        <input id="toggle-button3" type="checkbox" class="hidden peer">
+                        <div
+                            class="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-purple-500">
+                        </div>
+                        <div
+                            class="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-100">
+                        </div>
+                    </span>
+                    <span class="buttonToggle">ON</span>
+                </label>
+
+            </div>
+        </div>
+    </div>
+    <div class="cardsContainer">
+        <div class="cardParent">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body" style="
+                            padding-bottom: 140px;
+                            ">
+                        <h5 class="card-title text-center">Appliance Status</h5>
+                        <center>
+                            <div id="predict_applances" style="
+                             padding-top: 94px;
+                         "></div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">AC Load live Current</h5>
+                        <center>
+                            <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                                src="https://thingspeak.com/channels/1953136/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cardParent">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Auxiliary Load Live Current</h5>
+                        <center>
+                            <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                                src="https://thingspeak.com/channels/1854887/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">LOAD FACTOR</h5>
+                        <center>
+                            <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                                src="https://thingspeak.com/channels/2002516/widgets/595658"></iframe>
+
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cardParent">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Supply Voltage</h5>
+                        <center>
+                            <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                                src="https://thingspeak.com/channels/2002516/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Load Power</h5>
+                        <center>
+                            <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                                src="https://thingspeak.com/channels/2002516/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cardParent">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Flat Plate Collector</h5>
+                        <center>
+                            <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                                src="https://thingspeak.com/channels/1506615/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Evacuated tube Collector</h5>
+                        <center>
+                            <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                                src="https://thingspeak.com/channels/1747418/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line"></iframe>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cardParent">
+            <div class="col-6">
+                <div class="card">
+                    <div class="tomorrow" data-location-id="132030" data-language="EN" data-unit-system="METRIC"
+                        data-skin="light" data-widget-type="aqiPollen" style="padding-bottom:22px;position:relative;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Room Temperature</h5>
+                        <center>
+                            <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+                                src="https://thingspeak.com/channels/1953136/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div>
+
+    </div>
+
+    <div class="swicthConter">
+        <div class="card">
+            <div class="cardHeader">
+                <h2>Appliance 1</h2>
+            </div>
+            <div class="cardBodyLower">
+                <div class="flex flex-col justify-start m-2 lg:m-6">
+                    <p class="text-sm sm:text-base">Current</p>
+                    <p class="text-4xl font-bold leading-none lg:text-6xl" id="current1">0</p>
+                </div>
+                <div class="flex flex-col justify-start m-2 lg:m-6">
+                    <p class="text-sm sm:text-base">Power</p>
+                    <p class="text-4xl font-bold leading-none lg:text-6xl" id="power1">0</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="cardHeader">
+                <h2>Appliance 2</h2>
+            </div>
+            <div class="cardBodyLower">
+                <div class="flex flex-col justify-start m-2 lg:m-6">
+                    <p class="text-sm sm:text-base">Current</p>
+                    <p class="text-4xl font-bold leading-none lg:text-6xl" id="current2">0</p>
+                </div>
+                <div class="flex flex-col justify-start m-2 lg:m-6">
+                    <p class="text-sm sm:text-base">Power</p>
+                    <p class="text-4xl font-bold leading-none lg:text-6xl" id="power2">0</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="cardHeader">
+                <h2>Appliance 3</h2>
+            </div>
+            <div class="cardBodyLower">
+                <div class="flex flex-col justify-start m-2 lg:m-6">
+                    <p class="text-sm sm:text-base">Current</p>
+                    <p class="text-4xl font-bold leading-none lg:text-6xl" id="current3">0</p>
+                </div>
+                <div class="flex flex-col justify-start m-2 lg:m-6">
+                    <p class="text-sm sm:text-base">Power</p>
+                    <p class="text-4xl font-bold leading-none lg:text-6xl" id="power3">0</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="cardHeader">
+                <h2>Appliance 4</h2>
+            </div>
+            <div class="cardBodyLower">
+                <div class="flex flex-col justify-start m-2 lg:m-6">
+                    <p class="text-sm sm:text-base">Current</p>
+                    <p class="text-4xl font-bold leading-none lg:text-6xl" id="current4">0</p>
+                </div>
+                <div class="flex flex-col justify-start m-2 lg:m-6">
+                    <p class="text-sm sm:text-base">Power</p>
+                    <p class="text-4xl font-bold leading-none lg:text-6xl" id="power4">0</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <footer class="px-4 py-8 dark:bg-gray-800 dark:text-gray-400">
+            <div
+                class="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
+                <div class="flex flex-row pr-3 space-x-4 sm:space-x-8">
+                    <div
+                        class="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-full dark:bg-violet-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"
+                            class="w-5 h-5 rounded-full dark:text-gray-900">
+                            <path
+                                d="M18.266 26.068l7.839-7.854 4.469 4.479c1.859 1.859 1.859 4.875 0 6.734l-1.104 1.104c-1.859 1.865-4.875 1.865-6.734 0zM30.563 2.531l-1.109-1.104c-1.859-1.859-4.875-1.859-6.734 0l-6.719 6.734-6.734-6.734c-1.859-1.859-4.875-1.859-6.734 0l-1.104 1.104c-1.859 1.859-1.859 4.875 0 6.734l6.734 6.734-6.734 6.734c-1.859 1.859-1.859 4.875 0 6.734l1.104 1.104c1.859 1.859 4.875 1.859 6.734 0l21.307-21.307c1.859-1.859 1.859-4.875 0-6.734z">
+                            </path>
+                        </svg>
+                    </div>
+                    <ul class="flex flex-wrap items-center space-x-4 sm:space-x-8">
+                        <li>
+                            <a rel="noopener noreferrer" href="#">Terms of use</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
+                    <li>
+                        <a rel="noopener noreferrer" href="#">Instagram</a>
+                    </li>
+                    <li>
+                        <a rel="noopener noreferrer" href="#">Facebook</a>
+                    </li>
+                    <li>
+                        <a rel="noopener noreferrer" href="#">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </footer>
+</body>
+
+</html>
